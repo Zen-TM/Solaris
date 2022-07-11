@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Jaspet
   m_Shader: {fileID: 4800000, guid: a65d9b2fb82f9c94c84d73a487cf0613, type: 3}
-  m_ShaderKeywords: _ENABLEATMOSPHERE_ON
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ENABLEATMOSPHERE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -28,11 +30,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudsNormals:
-        m_Texture: {fileID: 2800000, guid: f630a5adaf8f7d34ea82aae28512b1a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: ed5dcbffe8e50ee4fa8d19552988e49d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudsTexture:
-        m_Texture: {fileID: 2800000, guid: c69ca91c5da35514c837c4e254f7f9d0, type: 3}
+        m_Texture: {fileID: 2800000, guid: b795b243ab1959142bef0e3b99e84b3e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorTexture:
@@ -75,6 +77,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
@@ -97,14 +100,15 @@ Material:
     - _DstBlend: 0
     - _EnableAtmosphere: 1
     - _EnableCities: 0
-    - _EnableClouds: 0
+    - _EnableClouds: 1
     - _EnableWater: 0
-    - _EnumFloat: 1
+    - _EnumFloat: 0
     - _ExteriorIntensity: 1
     - _ExteriorSize: 0.164
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _IlluminationBoost: 1
     - _IlluminationSmoothness: 4
     - _InteriorIntensity: 1
     - _InteriorSize: -1.26
@@ -157,5 +161,7 @@ Material:
     - _IlluminationAmbient: {r: 0.044897962, g: 0.073469386, b: 0.1, a: 0}
     - _LightSource: {r: 0, g: 100, b: 0, a: 0}
     - _ShadowColorA: {r: 0.09803919, g: 0.23137257, b: 0.41176468, a: 1}
+    - _SkyblendA: {r: 0.491436, g: 0.5812334, b: 0.748, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WaterColor: {r: 0.28235298, g: 0.44313726, b: 0.517647, a: 0}
+  m_BuildTextureStacks: []

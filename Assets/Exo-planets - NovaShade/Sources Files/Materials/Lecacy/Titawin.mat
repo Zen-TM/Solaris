@@ -2,14 +2,19 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Titawin
   m_Shader: {fileID: 4800000, guid: a65d9b2fb82f9c94c84d73a487cf0613, type: 3}
-  m_ShaderKeywords: _ENABLEATMOSPHERE_ON _ENABLECITIES_ON _ENABLECLOUDS_ON _ENABLEWATER_ON
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ENABLEATMOSPHERE_ON
+  - _ENABLECITIES_ON
+  - _ENABLECLOUDS_ON
+  - _ENABLEWATER_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -28,11 +33,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudsNormals:
-        m_Texture: {fileID: 2800000, guid: f630a5adaf8f7d34ea82aae28512b1a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: ed5dcbffe8e50ee4fa8d19552988e49d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudsTexture:
-        m_Texture: {fileID: 2800000, guid: c69ca91c5da35514c837c4e254f7f9d0, type: 3}
+        m_Texture: {fileID: 2800000, guid: b795b243ab1959142bef0e3b99e84b3e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cloudz:
@@ -111,6 +116,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
     - _AlphaCutoff: 0.5
@@ -136,7 +142,7 @@ Material:
     - _EnableClouds: 1
     - _EnableLandLava: 0
     - _EnableWater: 1
-    - _EnumFloat: 1
+    - _EnumFloat: 0
     - _ExteriorIntensity: 0.25
     - _ExteriorSize: 0.3
     - _Float10: 1
@@ -145,6 +151,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _IlluminationAmbient: 0.579
+    - _IlluminationBoost: 1
     - _IlluminationSmoothness: 4
     - _InteriorIntensity: 0.65
     - _InteriorSize: -0.75
@@ -207,5 +214,7 @@ Material:
     - _ShadowColor: {r: 0.07063498, g: 0.10829547, b: 0.255, a: 1}
     - _ShadowColorA: {r: 0.09617401, g: 0.23188531, b: 0.41099998, a: 1}
     - _ShadowsColorIntensity: {r: 0.30828, g: 0.62634665, b: 0.734, a: 1}
+    - _SkyblendA: {r: 0.491436, g: 0.5812334, b: 0.748, a: 0}
     - _SunsetColor: {r: 0.3685, g: 0.55275, b: 0.737, a: 0}
     - _WaterColor: {r: 0.28394818, g: 0.44199488, b: 0.517, a: 0}
+  m_BuildTextureStacks: []
