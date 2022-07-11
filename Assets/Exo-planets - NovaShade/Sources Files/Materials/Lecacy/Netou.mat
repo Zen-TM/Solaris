@@ -31,11 +31,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudsNormals:
-        m_Texture: {fileID: 2800000, guid: ed5dcbffe8e50ee4fa8d19552988e49d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8f8da48b88c08f14fb4f24347ce6850a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudsTexture:
-        m_Texture: {fileID: 2800000, guid: b795b243ab1959142bef0e3b99e84b3e, type: 3}
+        m_Texture: {fileID: 2800000, guid: fe657274ce6c5054bae359f68db92e1f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cloudz:
@@ -140,7 +140,7 @@ Material:
     - _EnableClouds: 1
     - _EnableLandLava: 0
     - _EnableWater: 0
-    - _EnumFloat: 0
+    - _EnumFloat: 2
     - _ExteriorIntensity: 0.38
     - _ExteriorSize: 0.254
     - _Float10: 1

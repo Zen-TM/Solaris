@@ -156,6 +156,7 @@ public class PlanetController : MonoBehaviour
         listLength ++;
 
         infoDropdown.transform.GetChild(0).GetChild(2).GetChild(0).GetChild(3).gameObject.GetComponent<Dropdown>().interactable = planetIsNew;
+        dropdown = infoDropdown.transform.GetChild(0).gameObject;
 
         if (newPlanetName == name)
         {
@@ -320,6 +321,7 @@ public class PlanetController : MonoBehaviour
                 }
                 Destroy(deletingPlanet);
                 Destroy(planetLabels.transform.GetChild(dropdownNum + 1).gameObject);
+                celestialBodiesParent.GetComponent<StorePlanetData>().ResetSavedData(nameOfDeletedPlanet);
                 cam.transform.GetComponent<CameraMovement>().RemoveFollowOption(dropdownNum);
             }
 
@@ -344,7 +346,6 @@ public class PlanetController : MonoBehaviour
             }
         }
 
-        celestialBodiesParent.GetComponent<StorePlanetData>().ResetSavedData(nameOfDeletedPlanet);
 
         Resize();
     }
@@ -434,6 +435,15 @@ public class PlanetController : MonoBehaviour
     //applies edits when a planet is edited, creates new planets when a new planet's details are entered
     public void ApplyEdits()
     {
+        Transform slidingInfo = dropdown.transform.GetChild(2).GetChild(0);
+        type = slidingInfo.GetChild(3).GetComponent<Dropdown>().value;
+        mass = float.Parse(slidingInfo.GetChild(5).GetComponent<InputField>().text);
+        radius = float.Parse(slidingInfo.GetChild(7).GetComponent<InputField>().text);
+        velocity = float.Parse(slidingInfo.GetChild(9).GetComponent<InputField>().text);
+        trajectory = float.Parse(slidingInfo.GetChild(11).GetComponent<InputField>().text);
+        xPos = float.Parse(slidingInfo.GetChild(13).GetComponent<InputField>().text);
+        yPos = float.Parse(slidingInfo.GetChild(15).GetComponent<InputField>().text);
+
         if (celestialBodiesParent.transform.childCount == dropdownNum)
         {
             newPlanetCreated = true;
@@ -479,8 +489,10 @@ public class PlanetController : MonoBehaviour
             editedPlanet.position = new Vector3 (xPos, 0, yPos);
             editedPlanet.localScale = new Vector3 (radius, radius, radius);
             planetRB.mass = mass;
-            xVel = velocity * Mathf.Cos(trajectory);
-            yVel = velocity * Mathf.Sin(trajectory);
+            float actualTrajectory = Mathf.PI - (trajectory * Mathf.PI / 180) - (Mathf.PI / 2);
+            xVel = velocity * Mathf.Cos(actualTrajectory);
+            yVel = velocity * Mathf.Sin(actualTrajectory);
+            Debug.Log(xVel.ToString() + " : " + yVel.ToString());
             planetRB.velocity = new Vector3 (xVel, 0, yVel);
 
             celestialBodiesParent.GetComponent<StorePlanetData>().SavePlanet(editedPlanet.gameObject);

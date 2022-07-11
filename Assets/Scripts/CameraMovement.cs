@@ -37,6 +37,7 @@ public class CameraMovement : MonoBehaviour
 
     void Start()
     {
+        preList = 1;
         mouseOver = false;
         planetToFollow = 0;
         COM.SetActive(false);
@@ -199,18 +200,6 @@ public class CameraMovement : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject() && currentGameObject != null && currentGameObject.transform.IsChildOf(planetLabels) == false)
         {
             mouseOver = true;
-/*            Transform newParent = currentGameObject.transform;
-            for (int i = 0; i < 8; i++)
-            {
-                if (newParent.parent != null)
-                {
-                    newParent = newParent.parent;
-                    if (newParent == slidingObjects.transform)
-                    {
-                        mouseOver = true;
-                    }
-                }
-            }*/
         }
     }
 
@@ -230,7 +219,7 @@ public class CameraMovement : MonoBehaviour
         CreateDrowpdownOptions();
     }
 
-    public void CreateDrowpdownOptions()
+    public void CreateDrowpdownOptions(int planetIndex = -1)
     {
         planetSelectDropdown.ClearOptions();
         
@@ -244,10 +233,19 @@ public class CameraMovement : MonoBehaviour
         }
         foreach (Transform child in celestialBodies.transform) 
         {
-            AddFollowOption(child.name);
-        }
+            if (planetIndex != -1)
+            {
+                if (child.gameObject.name != celestialBodies.transform.GetChild(planetIndex).gameObject.name)
+                {
+                    AddFollowOption(child.name);
+                }
+            } else {
+                AddFollowOption(child.name);
+            }
 
+        }
         DropdownItemSelected(planetSelectDropdown);
+        planetSelectDropdown.RefreshShownValue();
     }
 
     public void AddFollowOption(string planetName)
@@ -258,7 +256,7 @@ public class CameraMovement : MonoBehaviour
 
     public void RemoveFollowOption(int planetIndex)
     {
-        planetSelectDropdown.options.RemoveAt(planetIndex + preList);
-        CreateDrowpdownOptions();
+        planetSelectDropdown.options.RemoveAt(planetIndex + preList - 1);
+        CreateDrowpdownOptions(planetIndex);
     }
 }

@@ -2,14 +2,18 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Amerald
   m_Shader: {fileID: 4800000, guid: a65d9b2fb82f9c94c84d73a487cf0613, type: 3}
-  m_ShaderKeywords: _ENABLEATMOSPHERE_ON _ENABLECITIES_ON _ENABLECLOUDS_ON
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ENABLEATMOSPHERE_ON
+  - _ENABLECITIES_ON
+  - _ENABLECLOUDS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -111,6 +115,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
     - _AlphaCutoff: 0.5
@@ -145,6 +150,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _IlluminationAmbient: 0.579
+    - _IlluminationBoost: 1
     - _IlluminationSmoothness: 4
     - _InteriorIntensity: 1
     - _InteriorSize: 0.32
@@ -207,5 +213,7 @@ Material:
     - _ShadowColor: {r: 0.07063498, g: 0.10829547, b: 0.255, a: 1}
     - _ShadowColorA: {r: 0, g: 0, b: 0, a: 1}
     - _ShadowsColorIntensity: {r: 0.30828, g: 0.62634665, b: 0.734, a: 1}
+    - _SkyblendA: {r: 0.491436, g: 0.5812334, b: 0.748, a: 0}
     - _SunsetColor: {r: 0.3685, g: 0.55275, b: 0.737, a: 0}
     - _WaterColor: {r: 0.53900003, g: 0.8605266, b: 1, a: 0}
+  m_BuildTextureStacks: []
